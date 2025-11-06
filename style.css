@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* Map fills entire screen */
+#map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Overlay info box */
+#info-overlay {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  z-index: 1000;
+  width: 90%;
+  max-width: 480px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#info-overlay:hover {
+  transform: translateX(-50%) scale(1.03);
+}
+
+#info-overlay h1 {
+  font-size: 1.4rem;
+  margin: 0 0 10px;
+  color: #0078ff;
+}
+
+#info-overlay .info-content p {
+  margin: 6px 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  z-index: 999;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #info-overlay {
+    width: 95%;
+    padding: 15px 20px;
+  }
+  #info-overlay h1 {
+    font-size: 1.2rem;
+  }
+}
